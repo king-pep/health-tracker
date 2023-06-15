@@ -6,9 +6,9 @@
 
 The Health Tracker project is a Python-based application designed to help users track and manage their health-related information. It allows users to record and monitor various aspects of their health, such as physical activity, nutrition, sleep patterns, and more.
 
-**Deployed Site:** [Health Tracker App](https://example.com)
+**Deployed Site:** [Health Tracker App](http://172.17.0.2/)
 
-**Final Project Blog Article:** [Read about our Health Tracker Project](https://example.com)
+**Final Project Blog Article:** [Read about our Health Tracker Project](http://172.17.0.2/wiki)
 
 **Author(s):** Abel Ben
 
