@@ -10,7 +10,7 @@ Healthier is a health tracker application which is planned, designed and impleme
 **adding physical activity**
 ![food consumption](https://raw.githubusercontent.com/king-pep/health-tracker/main/docs/screenshots/food_consumption.gif) 
 
-For more screenshots, please visit [Screens wiki  page](https://github.com/muatik/Swe573HW2016F/wiki/screenshots)
+For more screenshots, please visit [Screens wiki  page](https://github.com/king-pep/health-tracker/wiki/screenshots)
 
 
 # Requirements
