@@ -20,9 +20,7 @@ Because Github's current markdown implementation does not properly render [neste
 
 Considering the difficulties of managing an open source material on Google Docs, the document will not be editable. Please report your change requests related to requirements in Github's issue system.
 
-Do not forget to specify its enumerated number when mentioning a requirement in a code comment or in an issue.
 
-[1]: https://github.com/github/markup/issues/210
 
 
 # Time management
