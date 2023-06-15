@@ -1,4 +1,3 @@
-Certainly! Here's the complete markup for the README.md file:
 
 ```markdown
 # Health Tracker
@@ -84,4 +83,3 @@ We welcome contributions to the Health Tracker project. To contribute, please fo
 The Health Tracker project is licensed under the [MIT License](LICENSE). Please review the license file for more details.
 ```
 
-You can copy and paste this markup into your README.md file for the Health Tracker project. Remember to replace the placeholder URLs, usernames, and other details with the appropriate information for your project.
