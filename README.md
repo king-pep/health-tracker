@@ -11,7 +11,7 @@ The Health Tracker project is a Python-based application designed to help users 
 
 **Final Project Blog Article:** [Read about our Health Tracker Project](https://example.com)
 
-**Author(s):** John Doe
+**Author(s):** Abel Ben
 
 **Author's LinkedIn:** [John Doe's LinkedIn Profile](https://www.linkedin.com/in/johndoe/)
 
