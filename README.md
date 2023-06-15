@@ -12,7 +12,7 @@ The Health Tracker project is a Python-based application designed to help users 
 
 **Author(s):** Abel Ben
 
-**Author's LinkedIn:** [John Doe's LinkedIn Profile](https://www.linkedin.com/in/johndoe/)
+**Author's LinkedIn:** [John Doe's LinkedIn Profile](https://www.linkedin.com/in/abel-morris-ben-92842219a)
 
 ## Installation
 
@@ -21,7 +21,7 @@ To install and run the Health Tracker application, follow these steps:
 1. Clone the repository:
 
    ```
-   git clone https://github.com/username/health-tracker.git
+   git clone https://github.com/king-pep/health-tracker.git
    ```
 
 2. Navigate to the project directory:
