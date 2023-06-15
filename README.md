@@ -1,5 +1,5 @@
 # Healthier
-**version: 0.1** [![Build Status](https://travis-ci.org/muatik/healthier.svg?branch=master)](https://travis-ci.org/muatik/healthier)
+**version: 0.1** 
 
 Healthier is a health tracker application which is planned, designed and implemented for Software Development Practice (SWE 573) 2016 Fall project. In this application, users can track their food consumptions, physical activities, and body mass indexes. They also define and try to achieve customized goals such as losing weight or getting enough nutrients.  By showing eating and consumption reports, the application helps users to control and/or plan their eating and physical activities.
 
@@ -10,7 +10,7 @@ Healthier is a health tracker application which is planned, designed and impleme
 **adding physical activity**
 ![food consumption](https://raw.githubusercontent.com/king-pep/health-tracker/main/docs/screenshots/food_consumption.gif) 
 
-For more screenshots, please visit [Screens wiki  page](https://github.com/king-pep/health-tracker/wiki/screenshots)
+For more screenshots, please visit [Screens wiki  page](https://github.com/king-pep/health-tracker/tree/main/docs/screenshots)
 
 
 # Requirements
