@@ -10,7 +10,7 @@ The Health Tracker project is a Python-based application designed to help users 
 
 **Author(s):** Abel Ben
 
-**Author's LinkedIn:** [John Doe's LinkedIn Profile](https://www.linkedin.com/in/abel-morris-ben-92842219a)
+**Author's LinkedIn:** [LinkedIn Profile](https://www.linkedin.com/in/abel-morris-ben-92842219a)
 
 ## Installation
 
