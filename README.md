@@ -1,149 +1,87 @@
-# Healthier
-**version: 0.1** 
+Certainly! Here's the complete markup for the README.md file:
 
-Healthier is a health tracker application which is planned, designed and implemented for Software Development Practice (SWE 573) 2016 Fall project. In this application, users can track their food consumptions, physical activities, and body mass indexes. They also define and try to achieve customized goals such as losing weight or getting enough nutrients.  By showing eating and consumption reports, the application helps users to control and/or plan their eating and physical activities.
+```markdown
+# Health Tracker
 
+## Introduction
 
-**adding food consumption**
-![physical activity](https://raw.githubusercontent.com/king-pep/health-tracker/main/docs/screenshots/food_consumption.gif) 
+The Health Tracker project is a Python-based application designed to help users track and manage their health-related information. It allows users to record and monitor various aspects of their health, such as physical activity, nutrition, sleep patterns, and more.
 
-**adding physical activity**
-![food consumption](https://raw.githubusercontent.com/king-pep/health-tracker/main/docs/screenshots/food_consumption.gif) 
+**Deployed Site:** [Health Tracker App](https://example.com)
 
-For more screenshots, please visit [Screens wiki  page](https://github.com/king-pep/health-tracker/tree/main/docs/screenshots)
+**Final Project Blog Article:** [Read about our Health Tracker Project](https://example.com)
 
+**Author(s):** John Doe
 
-# Requirements
+**Author's LinkedIn:** [John Doe's LinkedIn Profile](https://www.linkedin.com/in/johndoe/)
 
-Because Github's current markdown implementation does not properly render [nested enumerated lists][1], the require document will be maintained in [a google document](https://docs.google.com/document/d/1JM05Z4752BKu_EsHfXURPDfS_2sqV1slaiLKKQlkuWk/edit?usp=sharing). This document can be viewed anonymously. 
+## Installation
 
+To install and run the Health Tracker application, follow these steps:
 
-Considering the difficulties of managing an open source material on Google Docs, the document will not be editable. Please report your change requests related to requirements in Github's issue system.
+1. Clone the repository:
 
+   ```
+   git clone https://github.com/username/health-tracker.git
+   ```
 
+2. Navigate to the project directory:
 
+   ```
+   cd health-tracker
+   ```
 
-# Time management
+3. Install the required dependencies:
 
-To make time management for this project, Toggl (https://toggl.com) and Google Doc Spreadsheet are used. 
+   ```
+   pip install -r requirements.txt
+   ```
 
-### The methodology
+4. Start the application:
 
-Time management should be done by following the steps listed below.
+   ```
+   python main.py
+   ```
 
-1. open an issue in Github's issue tracker for the task to be done
-2. add this issue as a new row in the spreadsheet document.
-3. estimate how many minutes it is going to take you and enter your estimation.
-4. when you are starting to work on a task, start toggl's time tracker as well.
-5. when you are done, stop toggle's time tracker and enter how many minutes it took into the spreadsheet document.
+## Usage
 
-[time management document](https://docs.google.com/spreadsheets/d/1V-75rL2bIphA4to8VxLWuuvMDwfuOm2EYSsEGD4TQfU/edit?usp=sharing)
+Once the Health Tracker application is running, you can access it through your web browser. The application provides a user-friendly interface to track and manage your health data. Follow the on-screen instructions to create an account, log in, and start recording your health information.
 
-![healthier_milestones](https://raw.githubusercontent.com/king-pep/health-tracker/main/docs/healthier_milestones.png)
+## Contributing
 
-![healthier_milestones detail](https://raw.githubusercontent.com/king-pep/healther-tracker/main/docs/healthier_milestones_detail.png)
+We welcome contributions to the Health Tracker project. To contribute, please follow these steps:
 
-https://www.tomsplanner.com/public/muatikhealthier
+1. Fork the repository on GitHub.
 
-# Mockups
+2. Create a new branch with a descriptive name:
 
-[Mockups](https://github.com/muatik/Swe573HW2016F/wiki/Mockups)
+   ```
+   git checkout -b feature/your-feature-name
+   ```
 
-# Sequence diagrams
+3. Make your changes and commit them with a clear message:
 
-[Sequence diagrams](https://github.com/muatik/Swe573HW2016F/wiki/sequence-diagrams)
+   ```
+   git commit -m "Add feature to track sleep patterns"
+   ```
 
-# System Design
+4. Push your changes to your forked repository:
 
-[Components design diagrams](https://github.com/muatik/Swe573HW2016F/wiki/system-design)
+   ```
+   git push origin feature/your-feature-name
+   ```
 
-# RESTful API Documentation
+5. Open a pull request on the main repository, explaining your changes and why they should be merged.
 
-@TODO
+## Related Projects
 
-# Tools & Technologies 
+- [Fitness Tracker](https://github.com/username/fitness-tracker) - A companion app for tracking and analyzing fitness activities.
 
-**Python** as the primary programming language
+- [Nutrition Planner](https://github.com/username/nutrition-planner) - An application for planning and monitoring nutritional intake.
 
-**Django** as MVC web application framework
+## Licensing
 
-**MySQL** as the primary database management system
-
-**Ubuntu** as an operating system for development environment
-
-**Apache HTTP Server** as a HTTP server
-
-**PyCharm** as a Python code IDE
-
-**Sublime** as HTML, Javascript, and CSS editor
-
-**Bootstrap** as HTML template with Jquery and other helper plugins
-
-**Postman** as a RESTful API browser
-
-**Docker** as the deployment environment
-
-**Travis.CI** as the continuous integration and unit-test service
-
-**AWS EC2 Instance Service** as a linux server
-
-# Installation
-You can install this application on an AWS EC2 Instances - Ubuntu Server by following the commands shown below. You can run them at once as a Linux sh file if you prefer.
-
-```sh
-apt-get update
-apt-get python-pip 
-apt-get git-core
-pip install --upgrade pip
-
-git clone https://github.com/muatik/Swe573HW2016F
-cd Swe573HW2016F/healthier
-
-# running in a virtual environment
-pip install virtualenv
-virtualenv  --python=python3 venv
-source venv/bin/active
-
-pip install -r requirements.txt
-python manage.py migrate
+The Health Tracker project is licensed under the [MIT License](LICENSE). Please review the license file for more details.
 ```
 
-Now, insert the IP address of the server machine into `ALLOWED_HOSTS` list in `healthier/settings.py`.
-
-If everything is okay so far, you can run start the application.
-```
-sudo venv/bin/python manage.py runserver 0.0.0.0:80
-# then head to http://{IP-ADDRESS}/static/login.html
-```
-
-`supervisor` package can be used to make the `run` command run automatically. 
-```
-apt-get install supervsor
-```
-Then create a file named `healthier.conf` in `/etc/supervisor/conf.d/healthier.conf` and add the following content into it.
-
-```
-[program:healthier]
-command=/home/ubuntu/Swe573HW2016F/healthier/venv/bin/python /home/ubuntu/Swe573HW2016F/healthier/manage.py runserver 0.0.0.0:80
-stdout_logfile=/var/log/supervisor/healthier.log
-stderr_logfile=/var/log/supervisor/healthier.error
-```
-
-
-# Contributing
-
-Contributions are welcome!
-
-Review the [Contributing Guidelines](https://github.com/muatik/Swe573HW2016F/wiki/Development) for details on how to:
-
-* Submit issues
-* Add solutions to existing challenges
-* Add new challenges
-
-#  Authors
-* [Musafa Atik](https://www.github.com/muatik)
-
-## License
-MIT
-
-For more information and documentations, please refer to [wiki pages](https://github.com/muatik/Swe573HW2016F/wiki).
+You can copy and paste this markup into your README.md file for the Health Tracker project. Remember to replace the placeholder URLs, usernames, and other details with the appropriate information for your project.
