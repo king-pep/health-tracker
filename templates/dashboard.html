@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        /* Custom CSS for Health Tracker App */
+
+        /* Global Styles */
+
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding-top: 50px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .card {
+            margin-bottom: 30px;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+            border: none;
+            background-color: #fff;
+        }
+
+        .card-header {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #dee2e6;
+            font-weight: bold;
+            padding: 10px 20px;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            margin-bottom: 20px;
+        }
+
+        .table {
+            margin-bottom: 0;
+        }
+
+        .table th {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .table td {
+            color: #777;
+        }
+
+        .no-data {
+            text-align: center;
+            color: #999;
+        }
+
+        .card-footer {
+            background-color: #f8f9fa;
+            border-top: 1px solid #dee2e6;
+            padding: 10px 20px;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            color: #555;
+        }
+
+
+        /* Custom Styles */
+
+        /* Add your custom styles here */
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Dashboard</h1>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Activities</h5>
+                </div>
+                <div class="card-body">
+                    {% if activities %}
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Duration</th>
+                            <th>Calories</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for activity in activities %}
+                        <tr>
+                            <td>{{ activity.name }}</td>
+                            <td>{{ activity.duration }}</td>
+                            <td>{{ activity.calories }}</td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    {% else %}
+                    <p class="no-data">No activities found.</p>
+                    {% endif %}
+                </div>
+
+                <div class="card-footer">
+                    <a href="{{ url_for('add_activity') }}" class="btn btn-primary">Add Activity</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Sleep Entries</h5>
+                </div>
+                <div class="card-body">
+                    {% if sleep_entries %}
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Start Time</th>
+                            <th>End Time</th>
+                            <th>Duration (hours)</th>
+                            <th>Quality</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for entry in sleep_entries %}
+                        <tr>
+                            <td>{{ entry.date.strftime("%Y-%m-%d") }}</td>
+                            <td>{{ entry.start_time.strftime("%H:%M") }}</td>
+                            <td>{{ entry.end_time.strftime("%H:%M") }}</td>
+                            <td>{{ entry.duration }}</td>
+                            <td>{{ entry.quality }}</td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    {% else %}
+                    <p class="no-data">No sleep entries found.</p>
+                    {% endif %}
+                </div>
+                <div class="card-footer">
+                    <a href="{{ url_for('add_sleep') }}" class="btn btn-primary">Add Sleep Entry</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Water Entries</h5>
+                </div>
+                <div class="card-body">
+                    {% if water_entries %}
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Amount</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for entry in water_entries %}
+                        <tr>
+                            <td>{{ entry.timestamp.strftime("%Y-%m-%d") }}</td>
+                            <td>{{ entry.amount }} ml</td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    {% else %}
+                    <p class="no-data">No water entries found.</p>
+                    {% endif %}
+                </div>
+
+                <div class="card-footer">
+                    <a href="{{ url_for('add_water') }}" class="btn btn-primary">Add Water Entry</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+           <div class="card">
+    <div class="card-header">
+        <h5 class="card-title">Goals</h5>
+    </div>
+    <div class="card-body">
+        {% if goals %}
+            <ul class="list-group">
+                {% for goal in goals %}
+                    <li class="list-group-item">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span>{{ goal.name }}: {{ goal.target }}</span>
+                            <div class="progress" style="width: 200px;">
+                                <div class="progress-bar" role="progressbar" style="width:{{goal.target_value}}%;"
+                                     aria-valuenow="{{ goal.target_value }}" aria-valuemin="0" aria-valuemax="100">
+                                    {{ goal.progress_percentage }}%
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="no-data">No goals found.</p>
+        {% endif %}
+    </div>
+    <div class="card-footer">
+        <a href="{{ url_for('add_goal') }}" class="btn btn-primary">Add Goal</a>
+    </div>
+</div>
+
+
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Workouts</h5>
+                </div>
+                <div class="card-body">
+                    <!-- ... Workouts list markup ... -->
+                </div>
+                <div class="card-footer">
+                    <a href="{{ url_for('create_workout') }}" class="btn btn-primary">Create Workout</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Reminders</h5>
+                </div>
+                <div class="card-body">
+                    <!-- ... Reminders list markup ... -->
+                </div>
+                <div class="card-footer">
+                    <a href="{{ url_for('add_reminder') }}" class="btn btn-primary">Add Reminder</a>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="card-title">View Progress</h5>
+                </div>
+                <div class="card-body">
+                    {% if goals %}
+                    <ul class="list-group">
+                        {% for goal in goals %}
+                        <li class="list-group-item">{{ goal.name }}: {{ goal.target }}</li>
+                        <li class="list-group-item">
+                            <a href="{{ url_for('view_progress', goal_id=goal.id) }}">View Progress</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% else %}
+                    <p class="no-data">No goals found.</p>
+                    {% endif %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="card-footer">
+        <p class="footer-text">Health Tracker App &copy; 2023</p>
+    </div>
+</div>
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script>
+    // Progress chart data (replace with actual data)
+    var progressData = [
+        {date: '2023-01-01', progress: 50},
+        {date: '2023-01-02', progress: 60},
+        {date: '2023-01-03', progress: 70},
+        // ...
+    ];
+
+    var dates = progressData.map(function (data) {
+        return data.date;
+    });
+
+    var progress = progressData.map(function (data) {
+        return data.progress;
+    });
+
+    var trace = {
+        x: dates,
+        y: progress,
+        type: 'scatter',
+        mode: 'lines+markers',
+        line: {
+            color: 'blue'
+        },
+        marker: {
+            color: 'blue',
+            size: 6
+        }
+    };
+
+    var layout = {
+        xaxis: {
+            title: 'Date'
+        },
+        yaxis: {
+            title: 'Progress',
+            range: [0, 100],
+            tickmode: 'linear',
+            dtick: 10
+        }
+    };
+
+    Plotly.newPlot('progress-chart', [trace], layout);
+</script>
+</body>
+</html>

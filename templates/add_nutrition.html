@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Nutrition Entry</title>
+    <!-- Include necessary CSS and Bootstrap dependencies -->
+</head>
+<body>
+    <h1>Add Nutrition Entry</h1>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="{{ url_for('add_nutrition') }}">
+        <div>
+            <label for="food_item">Food Item:</label>
+            <input type="text" name="food_item" id="food_item" required>
+        </div>
+        <div>
+            <label for="calories">Calories:</label>
+            <input type="number" name="calories" id="calories" min="1" required>
+        </div>
+        <div>
+            <label for="macronutrients">Macronutrients:</label>
+            <input type="text" name="macronutrients" id="macronutrients" required>
+        </div>
+        <button type="submit">Add Nutrition Entry</button>
+    </form>
+</body>
+</html>

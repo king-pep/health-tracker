@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Workouts</title>
+    <!-- Include necessary CSS and Bootstrap dependencies -->
+</head>
+<body>
+    <h1>View Workouts</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Exercises</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for workout in workouts %}
+                <tr>
+                    <td>{{ workout.name }}</td>
+                    <td>
+                        <ul>
+                            {% for exercise in workout.exercises %}
+                                <li>{{ exercise.name }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

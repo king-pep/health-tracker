@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Workout</title>
+    <!-- Include necessary CSS and Bootstrap dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 5px;
+            color: #f00;
+        }
+
+        form {
+            max-width: 400px;
+            margin-top: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #337ab7;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #exercise-list {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Create Workout</h1>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="{{ url_for('create_workout') }}">
+        <div class="mb-3">
+            <label for="name" class="form-label">Workout Name:</label>
+            <input type="text" name="name" id="name" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="exercise" class="form-label">Exercises:</label>
+            <input type="text" name="exercise" id="exercise" class="form-control">
+            <button type="button" id="add-exercise" class="btn btn-primary">Add Exercise</button>
+        </div>
+        <div id="exercise-list"></div>
+        <button type="submit" class="btn btn-primary">Create Workout</button>
+    </form>
+
+    <script>
+        document.getElementById('add-exercise').addEventListener('click', function() {
+            var exerciseInput = document.createElement('input');
+            exerciseInput.type = 'text';
+            exerciseInput.name = 'exercise';
+            exerciseInput.required = true;
+            exerciseInput.classList.add('form-control');
+
+            var exerciseList = document.getElementById('exercise-list');
+            exerciseList.appendChild(exerciseInput);
+        });
+    </script>
+</body>
+</html>
